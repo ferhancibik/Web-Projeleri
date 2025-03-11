@@ -1,0 +1,41 @@
+/* Genel sayfa stili */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Arka planı değiştirmek isterseniz bu satırı silin veya yorum satırı yapın */
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Arka plan rengi */
+    background-image: linear-gradient(to bottom right, #ff99cc, #9966ff); /* Pembe ve mor gradient arka plan */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form elemanları */
+.form-control {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+/* Küçük cihazlara uyarlama */
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}

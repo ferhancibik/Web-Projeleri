@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova | Yorum</title>
+  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/toastr/toastr.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" />
+  <style>
+    .profile {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .profile img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .profile h2 {
+      margin-top: 1rem;
+    }
+    .profile p {
+      margin-top: 0.5rem;
+    }
+    .social-icons {
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .social-icons i {
+      font-size: 1.5rem;
+    }
+    .about-title {
+      font-weight: bold;
+      color: pink;
+    }
+    .profile h2 {
+      margin-top: 1rem;
+      color: rgb(215, 110, 128); 
+    }
+    .container {
+      max-width: 800px; /* Örnek bir değer, ihtiyaca göre ayarlayın */
+      margin: auto; /* Sayfanın ortasına almak için */
+    }
+    .about-content {
+      text-align: center;
+    }
+    .about-content p {
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 400px; /* İçerik genişliği */
+    }
+    .about-content ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+    }
+    .about-content ul li {
+      margin-left: 20px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .designer {
+      margin-bottom: 30px;
+      overflow: hidden; /* İçeriklerin taşmaması için ayar */
+      display: flex;
+    }
+    .designer img {
+      width: 100px;
+      height: 100px; /* Kare şeklinde resim için aynı değerler */
+      border-radius: 50%; /* Yuvarlak çerçeve */
+      margin-right: 20px; /* Yorum satırından önceki boşluğu ayarlar */
+      float: left; /* Resmi sola yaslar */
+    }
+    .comment {
+      margin-bottom: 20px;
+      padding-left: 130px; /* Resim genişliği + sağ taraftaki boşluk */
+      border-left: 5px solid pink;
+      display: flex;
+    }
+
+    .comment img{
+      width: 100px;
+      height: 100px; /* Kare şeklinde resim için aynı değerler */
+      margin-right: 20px; /* Yorum satırından önceki boşluğu ayarlar */
+      float: left; /* Resmi sola yaslar */
+
+    }
+    .comment p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <h2 class="title">Nova Bookshop</h2>
+    <ul class="menu navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">ANASAYFA</a></li>
+      <li class="nav-item"><a class="nav-link" href="yorum.html">YORUM</a></li>
+      <li class="nav-item active"><a class="nav-link" href="hakkimizda.html">HAKKIMIZDA</a></li>
+      <li class="nav-item"><a class="nav-link" href="gizlilik.html">GİZLİLİK</a></li>
+    </ul>
+    <ul class="menu__icons navbar-nav ms-auto">
+      <li class="nav-item"><i class="bi bi-person" aria-label="Kullanıcı"></i></li>
+      <li class="nav-item"><i class="bi bi-search" aria-label="Arama"></i></li>
+      <li class="nav-item basket__icon" onclick="toggleModal()" aria-label="Sepet">
+        <i class="bi bi-bag"></i>
+        <span class="basket__count"></span>
+      </li>
+    </ul>
+  </nav>
+  <!-- Tasarımcı 1 -->
+
+  <div class="designer">
+    <img src="assets/images/..." alt="Tasarımcı">
+    <h2>Ferhan ÇIBIK (Tasarımcı)</h2>
+  </div>
+    <div class="comment">
+        <img src="assets/images/books/dorduncu-kanat.jpg" alt="Kitap Resmi">
+      <p>"Rebecca Yarros / Dördüncü Kanat :
+        Sayfalarca övsem yine de yetersiz kalacak harika bir fantastik kurgu #DördüncüKanat . Yaratılan müthiş evrende savaşa, mücadeleye, arkadaşlığa, ihanete ve aşka doyacaksınız. O kadar kusursuz bir şekilde anlatılmış ki, sanki bir simülasyonun içine giriyor ve o evrende o karakterlerle yaşıyorsunuz.
+        
+        Bulunduğu tehlikeli ve acımasız dünyaya rağmen kendisini kitaplara adayan ve yaşantısını arşivde geçiren Violet’in tek isteği Katipler Bölüğüne girmekti. Çevresi de böyle olacağını düşünüyordu ama annesinin Biniciler Bölüğünde general olması ve Violet’e sormadan verdiği kararla, kendini bu birliğin elemelerinde bulur. Hayatta kalmak için ya mücadele edecek ve mezun olacaktı ya da elemelerde başarısız olup ölecekti. Violet karakterine hayran kalmamak imkansız. Fiziksel olarak kısa ve güçsüz olmasına rağmen güçlü olabilmek adına verdiği mücadele eşsizdi. Bu eksikliğini zekasıyla kapatmasına ve aldığı kararlardaki duruşuna bayılacaksınız.
+        
+        Zekası ve gücüyle girdiği heryerde kendini belli eden Kanat Lideri Xaden de kitabımızın baş erkek karakteri. Ayn zamanda geçmişte ailelerinin yaşadıklarından dolayı Violet’in de uzak durması gereken gizemli yakışıklı. İkisinin sahneleri o kadar güzel ve gerçekçi yansıtılmış ki, bakışlardaki elektriği bile tüm benliğinizle hissediyorsunuz.
+        
+        Vadiyi tehlikelerden mühürler yoluyla ejderhalar koruyor ve bunun için de insanlara ihtiyaçları var. İnsanlar da yaşamayı sevdiği için ortaya akılalmaz türden bir ortaklık çıkıyor. Farklı renk ve güçlerde olan bu ejderhaların kendilerine birer binici seçmeleri gerekiyor. Eğer ejderhan olmayan bir biniciysen ölüsün. Ejderhaların gücüne, binicileriyle kurdukları bağa ve iletişimlerine bayılacaksınız. Tıpkı sahipleri gibi Sgaeyl, Tairn ve Andarna adındaki ejderhalar herkeste unutulmaz bir etki bırakacak. Yan karakterlerin bile unutulmaz olacağı harika bir serüven okurlarını bekliyor.
+        
+        Serinin ilk kitabı 667 sayfa olmasına rağmen soluksuz okuttu. İkinci kitabı sabırsızlıkla bekliyorum.
+        Keyifli okumalar…"</p>
+    </div>
+
+
+  <!-- Tasarımcı 2 -->
+
+  <div class="designer">
+    <img src="assets/images/..." alt="Tasarımcı ">
+    <h2>Ferhan ÇIBIK (Tasarımcı)</h2>
+  </div>
+    <div class="comment">
+        <img src="assets/images/books/aclik-oyunları.jpg" alt="Kitap Resmi">
+     <p>"Hayal gücü zengin biriyseniz, kitap okumak her zaman film seyretmenin üstündedir.
+
+        Filmi de çekilmiş olan kitapları okuduğumda, -eğer güzel yazılmışsa- filmini ne olursa olsun beğenemiyorum. O nedenle sadece filmini izlemiş ve 'kitabını okursam sıkılırım zaten biliyorum konuyu' diyenleriniz varsa onlara sesleniyorum. Bu kitabı gerçekten okuyun. İzlediğinizden daha keyifli olacağına eminim.
+        
+        Yazar olay örgüsünü öyle güzel kurmuş ve karekteri öyle güzel anlatmış ki, adeta ben oldum. Şu dünyadan göçüp giderken 'Açlık Oyunu'da oynamadım' demem.
+        
+        * Açlık oyunları kutlu olsun! Ve şans hep sizinle olsu"</p>
+    </div>
+
+    <!-- Tasarımcı 1 -->
+
+  <div class="designer">
+    <img src="assets/images/..." alt="Tasarımcı ">
+    <h2>Ferhan ÇIBIK (Tasarımcı)</h2>
+  </div>
+    <div class="comment">
+        <img src="assets/images/books/sis-ve-ofke-sarayi.jpg" alt="Kitap Resmi">
+      <p>"Öncelikle herkese merhaba!
+
+        Ben de bir çoğunuz gibi kitabı okumadan önce şağıdaki yorumlara bakmıştım. Yorumlarda bazen okuduğum başka kitaplarla ilgili abartıya kaçacak şekilde kötülemelere denk geldiğimden bu kötü yorumların beni çok etkilemesine izin vermeden, bir şans vermek istedim. Çünkü yorumların hepsine güven olmuyor takdir edersiniz ki, kiminin başka algıladığını biz başka algılayabiliyoruz.
+        
+        İyi ki de o şansı vermişim diyorum açıkçası, çünkü gerçekten kitabı beğendim ve gerçekten de söylediğim gibi sonradan farkettim ki, çok abartıya kaçan kötü yorumlar okumuşum. Bu yazıyı sırf, “o kadar saçma mı yaaa okumayayım o zaman” gibi düşüncelere girmenizi istemediğimden, konuya bir açıklık getirmek maksadıyla yazıyorum.
+        
+        İlk kitabı okuduğunuzda aman ne vasat bir aşk hikayesi, ne ara o kadar aşık oldular da birbirleri için ölecekler, aman ne kadar sığ bir aşk hikayesi okudum öyle diyebilirsiniz. Ben öyle demiştim fakat meğer yazar gerçek aşk hikayesini ikinci kitaba saklıyormuş. Rahatladım valla, adam akıllı bir aşka şahit olduk sonunda, çünkü Feyre gibi bir karaktere böyle bir aşk yakıştıramamıştım, bir şeyler olmamıştı sanki, hakikatten de olmamış :)
+        
+        Feyre gayet de güçlü bir karakter bence, çünkü yaptığı fedakarlıklar, verdiği savaşlar, hatalı olsa da sonradan hatasından döndüğü olaylar var. Kendini toksik bir ilişkide bulması buna bir süre sabredip sonra noktayı koyması daha doğal çünkü eğer ortada sevgi varsa pat diye bitiremezsiniz bir şeyleri, önce kabullenmek gerekir. Zayıf insanlarda bu süreç bazen çok uzun sürer ya da hiç kabullenmez ve o ilişkiye devam ederler. Feyre gayet makul bir süre içerisinde gerekeni yapıyor. Bize güçlü duruşunu çoğu zaman net bir şekilde gösteriyor. Fakat tanrıça değil sonuçta, zayıf olduğu yanlar da var herkes gibi.
+        
+        Aşağıdaki yorumlarda böyle güçlü karakter mi olur yeaaa, nasıl ezik nasıl sünepe, yok efendim
+        -tamlini öldüremem, yine de yanıma bıçak alayım,
+        buradan kaçmam lazım, ben bir bıçak alayım,
+        -buradan kaçmak mümkün değil ama ben yine de yanıma bıçak alayım.
+        +burada tutsak değilsin Feyre gitmek istiyorsan gidebilirsin.
+        -benim kaçmam lazım. Hemen bir plan yapayım.
+        
+        Gibi aşağıda aslında tam olarak kitapta böyle geçmeyen okuyucular tarafından böyle yorumlanmış cümleler yer alıyor. Öncelikle Feyre denize düşmüş ve yılana sarılmış durumda çünkü kaçarsa Tamlin ailesine bakmayacağını söylüyor, bundan dolayı Feyre ailesinin mutluluğu ve refahı için kalmayı tercih ediyor. Ama içten içe, ya bana yalan söylüyorlarsa? Ya aileme bakılmıyorsa diye şüpheye de düşüyor. Bu da onu kaçsam mı kaçmasam mı arasında bırakan şey. Bence bu durum aşağıdaki bir kaç arkadaşın iddia ettiğinin aksine oldukça gerçekçi bir durum çünkü kim olursa olsun, istediğiniz kadar güçlü bir kadın olun, açlıktan kırılan ailenizin refahı için kalmayı tercih ederken, ya refah içinde değillerse şüphesine düşersiniz. Karşınızda ölümsüz biri olabilir, bu yine de olası kötü bir durumda belki kendimi kurtarabileceğim bir ihtimal varsa diye bir bıçak taşımanızı saçma kılmaz. Çünkü dediğim gibi, denize düşen...
+        
+        Uzun süre açlık, yoksulluk çekmiş birinin refaha kavuşmasıyla başının dönmesinden ve mantıklı davranmamasından doğal ne olabilir? Bir süre sonra
+        Feyre zaten bu ilişkinin toksik bir ilişki olduğunu farkeder ve güçlü bir kadın olduğu için buna nokta koyar ve özüne döner. Biricik Yüce Lordumuz Rhysand ve gece sarayı ahalisi ile hayatına devam eder. Onları adil bir şekilde görmeye başlar. Bir savaşçı ruhuna sahip olduğu için Hybern kralına karşı savaşmak için türlü çalışmalara katılır.
+        Neden bu karaktere bu kadar irite olmuşlar anlamadım, ancak empati duygusundan yoksun olanlar olan biteni kavrayamaz diye düşünüyorum hakeza detaylı düşünüldüğünde neredeyse herşey mantığa oturuyor.
+        
+        Okuma yazmayı bilmemesi zoruna gidiyor, sen o kadar becerikli ol, öylesine badireler atlat fakat iki cümleyi okuyama! Bu gururlu biri için normal bir durum. Zoruna gittiği için de uyuz olduğu birinin kendisine okuma yazmayı öğretmeyi istemesini hatta bahsini açmasını terslemesi normal bence. Kendince gurur yapıyor işte, makul değil mi? Onca zaman okumadan hayatta kalıp, ailesini geçindirmiş, belli bir yaşa gelmiş de o güne kadar bu konunun sebep olduğu bir sıkıntı yaşamamış birine “okumayı hemen öğrenmen lazım” şartını kabul ettirmek basit olmayabilir. Ben bunca zaman onca zorlukla kendi başımın çaresine baktım ki, size mi kaldı bu diyebilir yani insan.
+        
+        Bu kitabı bir insanın yazığını unutmamalı ve kabul edilebilir hataları da görmezden gelebilmeliyiz diye düşünüyorum.
+        
+        Dex yayıncılığının çeviride zayıf kaldığı konusuna gelirsek, buna katılıyorum. Mesela kitapta çokça geçen, ilk okuduğumda yanlış yazdılar herhalde diye düşündüğüm fakat sonrasında kasıtlı olarak tercih edildiğini farkettiğim hiç bir anlama gelmeyip de bir hareketi gerçekten ifade etmeyi başarmış tuhaf ve anlamsız, “Tıpışlamak” ifadesi benim de kafama takılan bir ifade oldu illa da eleştireyim isterseniz diye söylüyorum.
+        
+        Bazı yerlerde ufak tefek dengesizlikler var, çok güçlü birinin onun için çok basit gibi gözüken bir şeyi yaparken zorlanması gibi detaylar. Örnek ver deseniz veremem, hatrımda olmayacak kadar azdır düşünün yani.
+        
+        Fakat argo meselesine gelirsek, olanları kibarca anlatmanın çok da bir yolu yok diye düşünmekteyim. Aman cinsellik aman bilmem ne demek de bana saçma geliyor, yazar yazmak, bazı şeyleri belirtmek istemiş yazmış bu kadar basit. Kendince aşırı tutkulu bir aşkı vurgulamak istemiş olabilir.
+        
+        Seri ikinci kitapta daha bir rayına oturuyor ve olan biteni daha iyi anlamanızı sağlıyor. Seriyi bitirmeden birinci kitap üzerinden yapılan yorumlar biraz sığ geldi bana, bilmediğiniz şey hakkında konuşmayın kardeşim. Bir siz akıllısınız! Okuyup da beğenenler sığ öyle mi? Önce elinizdeki kitabı düzgün yorumlayın, kendi kafanıza göre empatiden yoksun bir yorumlama tarafımca kabul edilemez. “Feyre güçlü bir karakter ama ağladı. Öyle güçlü mü olunur.” Falanca sözlerle ancak saçmalamış olursunuz. Çünkü aklıyla ve kalbiyle okuyan herkes Feyre’nin yaptığı davranışlarla karakterinin birbirine oturduğunu görebilir. Bu konuda bir dengesizlik uyumsuzluk yok, derin psikoloji var. Herkes de anlayamaz işte :)
+        
+        Bence kurgu gerçekten başarılı ve fantastik sever çoğu kişinin beğeneceği nitelikte. Siz o çok bilmişlerin yorumuna aldırmayın, her kötü yorumdan etkilenmeyin. Okuyun, beğenirsiniz beğenmezsiniz tamamen sizin fikriniz olur. Başkası beğenmedi diye beğenebileceğiniz güzel bir seriden mahrum kalmayın efendim. "</p>
+    </div>
+
+
+  <!-- Tasarımcı 2 -->
+
+  <div class="designer">
+    <img src="assets/images/..." alt="Tasarımcı ">
+    <h2>Ferhan ÇIBIK (Tasarımcı) </h2>
+    
+  </div>
+    <div class="comment">
+        <img src="assets/images/books/donusum.jpg" alt="Kitap Resmi">
+     <p>""hayatta her insanın kendini gregor samsa gibi hissettiği zamanları olmuştur"
+
+        kafka'nın sembolizmin ve soyut düşüncenin dibine vurduğu hikaye. fiziki bir değişiklikten yola çıkarak, belki de duygu dünyamızda bunun binlerce katı ters değişiklikleri ne kadarda doğal karşıladığımızı yüzümüze vurur. düşünülenin aksine değişen gregor samsa değil, ailesi ve çevresindekilerdir bana göre.
+        
+        yazarın tam olarak ne anlattığından çok sizin ne anladığınıza bağlı bir kitap.hayatınızın her döneminde, her her okuyuşunuzda, yeni bir şey bulursunuz içinde, hayatınızdaki her dönüm noktasında, ilkokuldan liseye, liseden üniversiteye, her dönemde bir şeyler katar bu kitap size. hep kendinizden bir parça bulursunuz.
+        
+        bir insanın böceğe dönüşmesiyle bir böceğin insana dönüşmesi arasındaki ayrımı düşündürür ilk başta.
+        sistemin çarklarından biri olursan, yaşarsın. Ama özgürlüğünü, sistemin belirlediği sınırlar dahilinde yaşamak zorundasındır. eğer çarktan ayrılmayı seçersen asıl özgürlüğü yakalamışsın demektir. ama bu sefer de toplum tarafından dışlanırsın. insanlar, onlara yük olduğunu sana hissettirmekten kaçınmazlar. psikolojin dağılır, yalnızlaşırsın ve sonunda ölürsün. en acısı da, kimse pek üzülmemiştir ölümüne. kurtulmuşlardır senden çünkü…
+        
+        insanlara faydan dokunuyorsa onların herhangi bir ihtiyacını karşılıyorsan, sevilirsin, sayılırsın. eğer bir faydan dokunmuyorsa ve hatta zararın dokunuyorsa insanlar tarafından yavaş yavaş dışlanırsın. ilişki bu duruma geldiğinde artık onların umrunda olmuyorsun ve gözlerinde bir böcek olarak görünüyorsun sadece.
+        
+        bunu hayatınıza da uygulayabilirsiniz. siz insanlara iyilik yapsanız da bu iyiliği kestiğiniz vakit karşı tarafın takındığı tavrın bir anda nasıl değiştiğini görebilirsiniz rahatlıkla. iyilik artık mesuliyete dönüşür…"</p>
+    </div>
+    
+ 
+
+</body>
+</html>
+  <script
+    type="text/javascript"
+    src="assets/bootstrap/js/bootstrap.bundle.min.js"
+  ></script>
+  <script src="./assets/jquery/jquery.min.js"></script>
+  <script src="./assets/toastr/toastr.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
